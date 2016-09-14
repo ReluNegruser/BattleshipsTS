@@ -1,0 +1,7 @@
+{
+  "name": "battleships-ts",
+  "version": "1.0.0",
+  "scripts": {
+    "tsc": "node_modules/.bin/tsc -p ts -w"
+  }
+}
