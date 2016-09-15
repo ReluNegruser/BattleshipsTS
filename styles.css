@@ -1,151 +1,151 @@
-    body {
-                    background-color: #F3F4F6;
-                    margin: 60px auto;
-                    width: 70%;
-                    max-width: 950px;
-                }
-                div#bigBoard{
-                    position: absolute;
-                    top:50px;
-                    left:350px;
-                    height: 2000px;
-                    width: 1200px;
-                    max-width: 70%;
-                    max-height: 70%;
-                }
-                div#board1{
-                    position: absolute;
-                    /*top:50px;
-                    left:350px;*/
-                    width: 800px;
-                    height: 831px;
-                    margin: auto;
-                    max-width:70%;
-                    background: url("images/background.jpg") no-repeat center center;
-                }
+body {
+    background-color: #F3F4F6;
+    margin: 60px auto;
+    width: 70%;
+    max-width: 950px;
+}
+div#bigBoard{
+    position: absolute;
+    top:50px;
+    left:350px;
+    height: 2000px;
+    width: 1200px;
+    max-width: 70%;
+    max-height: 70%;
+}
+div#board1{
+    position: absolute;
+    /*top:50px;
+    left:350px;*/
+    width: 800px;
+    height: 831px;
+    margin: auto;
+    max-width:70%;
+    background: url("images/background.jpg") no-repeat center center;
+}
 
-                div#board2{
-                    position: absolute;
-                    width: 800px;
-                    height: 831px;
-                    margin: auto;
-                    max-width:70%;
-                    background: url("images/background.jpg") no-repeat center center;
-                }
-                
-                div#messageAreaContainer{
-                    position:absolute;
-                    top: 20px;
-                    right: 50px;
-                    width: 300px;
-                    height: 200px;
-                    border: 1px solid #4A4A4A;
-                    border-radius: 8px;
-                    box-shadow: 3px 3px 4px rgba(0,0,0,0.4);
-                }
+div#board2{
+    position: absolute;
+    width: 800px;
+    height: 831px;
+    margin: auto;
+    max-width:70%;
+    background: url("images/background.jpg") no-repeat center center;
+}
 
-                div#gifContainer {
-                  height: 300px;
-                  width: 300px;
-                  position: absolute;
-                  top: 230px;
-                  left: 250px;
-                 text-align: center;
-                }
+div#messageAreaContainer{
+    position:absolute;
+    top: 20px;
+    right: 50px;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #4A4A4A;
+    border-radius: 8px;
+    box-shadow: 3px 3px 4px rgba(0,0,0,0.4);
+}
 
-                div#gif{
-                    background: url(images/42.gif);
-                    height: 256px;
-                    width: 256px;
-                    left: 25px;
-                    top: 10px;
-                    position: relative;
-                }
+div#gifContainer {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 230px;
+    left: 250px;
+    text-align: center;
+}
 
-                /*div#buttonContainer{
-                    position: absolute;
-                    top: 250px;
-                    right: 200px;
-                }
+div#gif{
+    background: url(images/42.gif);
+    height: 256px;
+    width: 256px;
+    left: 25px;
+    top: 10px;
+    position: relative;
+}
 
-                .button {
-                    background-color: #62A4D1;
-                    border: none;
-                    color: white;
-                    padding: 15px 32px;
-                    text-align: center;
-                    text-decoration: none;
-                    display: inline-block;
-                    font-size: 16px;
-                    margin: 4px 2px;
-                    cursor: pointer;
-                }*/
+/*div#buttonContainer{
+    position: absolute;
+    top: 250px;
+    right: 200px;
+}
 
-                div#messageArea {
-                    width: 300px;
-                    height: 200px;
-                    position: absolute;
-                    top:0px;
-                    left:0px;
-                    color: #123456;
-                    text-align:center;
-                    background-color: white;
-                    font-family: 'Roboto', sans-serif;
-                    font-size:large;
-                    font-weight:700;
-                    border-radius: 8px;
-                }
-                
+.button {
+    background-color: #62A4D1;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}*/
 
-                .hidden {
-                    display:none;
-                }
+div#messageArea {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    color: #123456;
+    text-align:center;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size:large;
+    font-weight:700;
+    border-radius: 8px;
+}
 
-                .show {
-                    display:block;
-                }
 
-                table {
-                    border-collapse: collapse;
-                    box-shadow: 3px 3px 4px rgba(0,0,0,0.4);
-                }
+.hidden {
+    display:none;
+}
 
-                table, td {
-                    border: 1px solid #4A4A4A;
-                }
-                td {
-                    width: 80px;
-                    height: 80px;
-                    background-color: rgba(255,255,255,0.15);
-                }
-                td:hover{
-                    background-color: transparent;
-                }
-                td.hit {
-                    background-color: #E4463F;
-                }
-                td.miss {
-                    background-color: #00B6C3;
-                }
-                td.sunk {
-                    background-color: black;
-                }
+.show {
+    display:block;
+}
 
-                span#hitTarget {
-                background: #E4463F;
-                -webkit-mask-image: url(images/ic_hit_24px.svg);
-                mask-image: url(images/ic_hit_24px.svg);
-                color: transparent;
-                }
-                span#missTarget {
-                background: #00B6C3;
-                -webkit-mask-image: url(images/ic_missed_24px.svg);
-                mask-image: url(images/ic_missed_24px.svg);
-                color: transparent;
-                }
-                span#sinkTarget {
-                background: black;
-                -webkit-mask-image: url(images/ic_sank_24px.svg);
-                mask-image: url(images/ic_sank_24px.svg);
-                color: transparent;
-                }
+table {
+    border-collapse: collapse;
+    box-shadow: 3px 3px 4px rgba(0,0,0,0.4);
+}
+
+table, td {
+    border: 1px solid #4A4A4A;
+}
+td {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255,255,255,0.15);
+}
+td:hover{
+    background-color: transparent;
+}
+td.hit {
+    background-color: #E4463F;
+}
+td.miss {
+    background-color: #00B6C3;
+}
+td.sunk {
+    background-color: black;
+}
+
+span#hitTarget {
+    background: #E4463F;
+    -webkit-mask-image: url(images/ic_hit_24px.svg);
+    mask-image: url(images/ic_hit_24px.svg);
+    color: transparent;
+}
+span#missTarget {
+    background: #00B6C3;
+    -webkit-mask-image: url(images/ic_missed_24px.svg);
+    mask-image: url(images/ic_missed_24px.svg);
+    color: transparent;
+}
+span#sinkTarget {
+    background: black;
+    -webkit-mask-image: url(images/ic_sank_24px.svg);
+    mask-image: url(images/ic_sank_24px.svg);
+    color: transparent;
+}
