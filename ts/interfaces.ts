@@ -1,14 +1,11 @@
-
-interface ship {
+interface Ship {
     locations: Array<string>;
     hits: Array<string>;
 }
 
-interface resultObject {
-    ship: ship;
-    guessIndex: number;
-    isHit: boolean;
-    alreadyFired: boolean;
+interface Cell {
+    row: string,
+    col: string
 }
 
-export { ship, resultObject }
+export { Ship, Cell }
