@@ -1,12 +1,11 @@
-/// <reference path="../lodash.d.ts" />
 
+import * as _ from 'lodash'
 import * as I from './interfaces'
 import Player from './playerState'
 import Direction from './enums'
 
 function fire (guess: string, player: Player) {
     let currentPlayer: Player = player;
-
     for( var i = 0; i < currentPlayer.numShips; i++) {
         let ship: I.Ship = currentPlayer.ships[i];
         let index: number = _.indexOf(ship.locations, guess);

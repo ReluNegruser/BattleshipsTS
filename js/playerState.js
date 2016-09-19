@@ -1,4 +1,3 @@
-/// <reference path="../lodash.d.ts" />
 "use strict";
 var Player = (function () {
     function Player(playerNo, boardSize, numShips, shipsSunk) {

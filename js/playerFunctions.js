@@ -1,5 +1,5 @@
-/// <reference path="../lodash.d.ts" />
 "use strict";
+var _ = require('lodash');
 var enums_1 = require('./enums');
 function fire(guess, player) {
     var currentPlayer = player;

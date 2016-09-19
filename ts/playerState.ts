@@ -1,5 +1,3 @@
-/// <reference path="../lodash.d.ts" />
-
 import * as I from './interfaces'
 
 class Player {
