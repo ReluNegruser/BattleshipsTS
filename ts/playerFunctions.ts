@@ -140,3 +140,5 @@ function generateAllShipLocations (player: Player) {
         }
     }
 }
+
+export {  }
