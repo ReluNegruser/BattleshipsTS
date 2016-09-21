@@ -4,44 +4,44 @@ import * as I from './interfaces'
 import Player from './playerState'
 import Direction from './enums'
 
-function fire (guess: string, player: Player) {
-    let currentPlayer: Player = player;
-    for( var i = 0; i < currentPlayer.numShips; i++) {
-        let ship: I.Ship = currentPlayer.ships[i];
-        let index: number = _.indexOf(ship.locations, guess);
-        let cell:HTMLTableCellElement = <HTMLTableCellElement>document.getElementById(guess);
-        var hitResult = {
-            ship: ship,
-            guessIndex: index,
-            isHit: false,
-            alreadyFired: false
-        };
+// function fire (guess: string, player: Player) {
+//     let currentPlayer: Player = player;
+//     for( var i = 0; i < currentPlayer.numShips; i++) {
+//         let ship: I.Ship = currentPlayer.ships[i];
+//         let index: number = _.indexOf(ship.locations, guess);
+//         let cell:HTMLTableCellElement = <HTMLTableCellElement>document.getElementById(guess);
+//         var hitResult = {
+//             ship: ship,
+//             guessIndex: index,
+//             isHit: false,
+//             alreadyFired: false
+//         };
 
-        if(checkSecondClick(ship, index, cell)) {
+//         if(checkSecondClick(ship, index, cell)) {
             
-            hitResult.alreadyFired = true;
-            return hitResult;
+//             hitResult.alreadyFired = true;
+//             return hitResult;
             
-        } else if (isHit(index)){
+//         } else if (isHit(index)){
             
-            hitResult.isHit = true;
-            return hitResult;
-        }
-    }
-    return hitResult;
-}
+//             hitResult.isHit = true;
+//             return hitResult;
+//         }
+//     }
+//     return hitResult;
+// }
 
-function checkSecondClick(ship: I.Ship, index: number, cell: HTMLTableCellElement) {
-		return ship.hits[index] === "hit" || cell.className === "miss";
-}
+// function checkSecondClick(ship: I.Ship, index: number, cell: HTMLTableCellElement) {
+// 		return ship.hits[index] === "hit" || cell.className === "miss";
+// }
 
-function isHit(index: number) {
-	return index >= 0;
-}
+// function isHit(index: number) {
+// 	return index >= 0;
+// }
 
-function isSunk(ship: I.Ship) {
-	return !(_.indexOf(ship.hits, " ") + 1);
-}
+// function isSunk(ship: I.Ship) {
+// 	return !(_.indexOf(ship.hits, " ") + 1);
+// }
 
 function collision(locations: Array<string>, player: Player) {
     let currentPlayer: Player = player;

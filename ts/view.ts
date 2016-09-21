@@ -1,4 +1,4 @@
-function displayMessage(title: string, msg: string, spanId) {
+function displayMessage(title: string, msg: string, spanId?: string) {
     var messageArea = document.getElementById("messageArea");
     messageArea.innerHTML =  `<h2> ${title} </h2> <h3><span id = ${spanId}>&nbsp;&nbsp;&nbsp;&nbsp;</span> ${msg} </h3>`;
 }
