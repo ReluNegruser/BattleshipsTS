@@ -1,28 +1,23 @@
 import * as I from './interfaces'
+import Board from './board'
 
 class Player {
 
-    public ships: Array<I.Ship>;
-
+	public board: Board;
+	
     constructor (public playerNo: number, public boardSize: number, public numShips: number, public shipsSunk: number) {
 
         this.boardSize = boardSize;
 		this.numShips = numShips;
 		this.shipsSunk = shipsSunk;
 		this.playerNo = playerNo;
-		this.ships = [
-			{ locations: ['0', '0'], hits: [" ", " "] },
-			{ locations: ['0', '0', '0'], hits: [" ", " ", " "] },
-			{ locations: ['0', '0', '0'], hits: [" ", " ", " "] },
-			{ locations: ['0', '0', '0', '0'], hits: [" ", " ", " ", " "] },
-			{ locations: ['0', '0', '0', '0', '0'], hits: [" ", " ", " ", " "," "] }
-		];	
+		this.board = new Board();
     }
-
+	
 	fire (guess: string) {
 
 		for( var i = 0; i < this.numShips; i++) {
-			let ship: I.Ship = this.ships[i];
+			let ship: I.Ship = this.board.ships[i];
 			let index: number = _.indexOf(ship.locations, guess);
 			let cell:HTMLTableCellElement = <HTMLTableCellElement>document.getElementById(guess);
 			var hitResult = {
