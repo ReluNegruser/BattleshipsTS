@@ -1,5 +1,6 @@
 import * as I from './interfaces'
 import Board from './board'
+import * as _ from 'lodash'
 
 class Player {
 

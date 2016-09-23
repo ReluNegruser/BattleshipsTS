@@ -4,7 +4,7 @@
         <title>Battleships</title>
         <meta charset = "utf-8">
         <link rel="stylesheet" type="text/css" href="styles.css">
-        <script src="./require.js"></script>
+        <script data-main="./js/bootstrapper" src="./js/require.js"></script>
     </head>
     <body>
         <div id="bigBoard">
@@ -89,9 +89,6 @@
 
                 </div>
         </div>
-        <script>require(['./node_modules/lodash/index', './js/board', './js/playerState', './js/bootstrapper'], function (playerState) {
-            //foo is now loaded.
-        });
-        </script>
+        <script src = './js/bootstrapper.js'></script>
     </body>
 </html>

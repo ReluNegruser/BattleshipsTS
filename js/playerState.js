@@ -1,5 +1,6 @@
 "use strict";
 var board_1 = require('./board');
+var _ = require('lodash');
 var Player = (function () {
     function Player(playerNo, boardSize, numShips, shipsSunk) {
         this.playerNo = playerNo;
