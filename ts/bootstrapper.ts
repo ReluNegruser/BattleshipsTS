@@ -1,5 +1,5 @@
-import Player from './playerState'
-import * as controller from './controller'
+//import Player from './playerState'
+//import * as controller from './controller'
 
 window.onload = init;
 

@@ -1,7 +1,13 @@
-import * as _ from 'lodash'
-import * as I from './interfaces'
-import Player from './playerState'
-import Direction from './enums'
+//import * as _ from 'lodash'
+//import * as I from './interfaces'
+//import Player from './playerState'
+//import Direction from './enums'
+
+/// <reference path="./interfaces.ts" />
+/// <reference path="./playerState.ts" />
+/// <reference path="./enums.ts" />
+
+
 
 class Board {
 
@@ -26,7 +32,7 @@ class Board {
         }
 
         function generateSingleShipLocations(shipIndex: number) {
-            let direction: Direction;
+            let direction: enums.Direction;
             let firstCell: I.Cell;
             let newShipLocations: Array<string>;
 
@@ -69,12 +75,12 @@ class Board {
                 return Math.floor(Math.random() * (currentPlayer.boardSize - this.ships[shipIndex].locations.length + 1)); 
             }
 
-            function computeFirstCell(direction: Direction) {
+            function computeFirstCell(direction: enums.Direction) {
                 let row, col;
-                if(direction == Direction.horizontal) {
+                if(direction == enums.Direction.horizontal) {
                     row = computeRowHorizontalOrColVertical();
                     col = computeColHorizontalOrRowVertical();
-                } else if (direction = Direction.vertical) {
+                } else if (direction = enums.Direction.vertical) {
                     row = computeColHorizontalOrRowVertical();
                     col = computeRowHorizontalOrColVertical();
                 }
@@ -83,7 +89,7 @@ class Board {
                 }
             }
 
-            function buildShipLocations (firstCell: I.Cell, direction: Direction) {
+            function buildShipLocations (firstCell: I.Cell, direction: enums.Direction) {
                 let row: string = firstCell.row;
                 let col: string = firstCell.col;
                 let newShipLocations: Array<string> = recreateCellID(currentPlayer);
@@ -117,47 +123,4 @@ class Board {
     }
 }
 
-export default Board
-
-
-
-
-
-// function fire (guess: string, player: Player) {
-//     let currentPlayer: Player = player;
-//     for( var i = 0; i < currentPlayer.numShips; i++) {
-//         let ship: I.Ship = currentPlayer.ships[i];
-//         let index: number = _.indexOf(ship.locations, guess);
-//         let cell:HTMLTableCellElement = <HTMLTableCellElement>document.getElementById(guess);
-//         var hitResult = {
-//             ship: ship,
-//             guessIndex: index,
-//             isHit: false,
-//             alreadyFired: false
-//         };
-
-//         if(checkSecondClick(ship, index, cell)) {
-            
-//             hitResult.alreadyFired = true;
-//             return hitResult;
-            
-//         } else if (isHit(index)){
-            
-//             hitResult.isHit = true;
-//             return hitResult;
-//         }
-//     }
-//     return hitResult;
-// }
-
-// function checkSecondClick(ship: I.Ship, index: number, cell: HTMLTableCellElement) {
-// 		return ship.hits[index] === "hit" || cell.className === "miss";
-// }
-
-// function isHit(index: number) {
-// 	return index >= 0;
-// }
-
-// function isSunk(ship: I.Ship) {
-// 	return !(_.indexOf(ship.hits, " ") + 1);
-// }
+//export default Board

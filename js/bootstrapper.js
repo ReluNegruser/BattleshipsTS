@@ -1,9 +1,8 @@
-"use strict";
-var playerState_1 = require('./playerState');
-var controller = require('./controller');
+//import Player from './playerState'
+//import * as controller from './controller'
 window.onload = init;
-var player1 = new playerState_1.default(1, 10, 5, 0);
-var player2 = new playerState_1.default(2, 10, 5, 0);
+var player1 = new Player(1, 10, 5, 0);
+var player2 = new Player(2, 10, 5, 0);
 function init() {
     function cellClickHandler1(e) {
         var guess = e.target.id;

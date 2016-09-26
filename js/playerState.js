@@ -1,6 +1,7 @@
+//import * as I from './interfaces'
+//import Board from './board'
+//import * as _ from 'lodash'
 "use strict";
-var board_1 = require('./board');
-var _ = require('lodash');
 var Player = (function () {
     function Player(playerNo, boardSize, numShips, shipsSunk) {
         this.playerNo = playerNo;
@@ -11,7 +12,7 @@ var Player = (function () {
         this.numShips = numShips;
         this.shipsSunk = shipsSunk;
         this.playerNo = playerNo;
-        this.board = new board_1.default();
+        this.board = new Board();
     }
     Player.prototype.fire = function (guess) {
         for (var i = 0; i < this.numShips; i++) {

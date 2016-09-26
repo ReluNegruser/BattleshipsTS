@@ -1,6 +1,8 @@
+//import * as _ from 'lodash'
+//import * as I from './interfaces'
+//import Player from './playerState'
+//import Direction from './enums'
 "use strict";
-var _ = require('lodash');
-var enums_1 = require('./enums');
 var Board = (function () {
     function Board() {
         this.ships = [
@@ -58,11 +60,11 @@ var Board = (function () {
             }
             function computeFirstCell(direction) {
                 var row, col;
-                if (direction == enums_1.default.horizontal) {
+                if (direction == Direction.horizontal) {
                     row = computeRowHorizontalOrColVertical();
                     col = computeColHorizontalOrRowVertical();
                 }
-                else if (direction = enums_1.default.vertical) {
+                else if (direction = Direction.vertical) {
                     row = computeColHorizontalOrRowVertical();
                     col = computeRowHorizontalOrColVertical();
                 }

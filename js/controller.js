@@ -1,5 +1,7 @@
+//import * as view from './view'
+//import * as I from './interfaces'
+//import Player from './playerState'
 "use strict";
-var view = require('./view');
 function processGuess(player, guess) {
     var guessLocation = guess;
     var hitResult = player.fire(guessLocation);

@@ -1,6 +1,7 @@
-import * as I from './interfaces'
-import Board from './board'
-import * as _ from 'lodash'
+//import * as I from './interfaces'
+//import Board from './board'
+//import * as _ from 'lodash'
+
 
 class Player {
 
@@ -58,4 +59,4 @@ class Player {
 
 }
 
-export default Player;
+//export default Player;
