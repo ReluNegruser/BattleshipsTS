@@ -2,8 +2,12 @@
 //import * as I from './interfaces'
 //import Player from './playerState'
 
+/// <reference path="./playerState.ts" />
+/// <reference path="./view.ts" />
+
+
 namespace controller {
-	export function processGuess(player: Player, guess: string) {
+	export function processGuess(player: playerState.Player, guess: string) {
 		let guessLocation = guess;
 		let hitResult = player.fire(guessLocation);
 
