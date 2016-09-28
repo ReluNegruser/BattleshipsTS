@@ -4,12 +4,12 @@
 
 /// <reference path="./board.ts" />
 
-	namespace playerState {
+namespace playerState {
 	export class Player {
 
 		public board: board.Board;
-		constructor (public playerNo: number, public boardSize: number, public numShips: number, public shipsSunk: number) {
 
+		constructor (public playerNo: number, public boardSize: number, public numShips: number, public shipsSunk: number) {
 			this.boardSize = boardSize;
 			this.numShips = numShips;
 			this.shipsSunk = shipsSunk;
@@ -20,7 +20,7 @@
 		fire (guess: string) {
 
 			for( var i = 0; i < this.numShips; i++) {
-				let ship: I.Ship = this.board.ships[i];
+				let ship: Ship = this.board.ships[i];
 				let index: number = _.indexOf(ship.locations, guess);
 				let cell:HTMLTableCellElement = <HTMLTableCellElement>document.getElementById(guess);
 				var hitResult = {
@@ -44,7 +44,7 @@
 			return hitResult;
 
 
-			function checkSecondClick(ship: I.Ship, index: number, cell: HTMLTableCellElement) {
+			function checkSecondClick(ship: Ship, index: number, cell: HTMLTableCellElement) {
 				return ship.hits[index] === "hit" || cell.className === "miss";
 			}
 
@@ -54,10 +54,9 @@
 
 		}
 
-		isSunk(ship: I.Ship) {
+		isSunk(ship: Ship) {
 			return !(_.indexOf(ship.hits, " ") + 1);
 		}
-
 	}
 }
 

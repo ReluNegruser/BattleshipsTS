@@ -1,4 +1,3 @@
-//export { Ship, Cell } 
 //import * as I from './interfaces'
 //import Board from './board'
 //import * as _ from 'lodash'
@@ -66,7 +65,6 @@ var enums;
 //import * as I from './interfaces'
 //import Player from './playerState'
 //import Direction from './enums'
-/// <reference path="./interfaces.ts" />
 /// <reference path="./playerState.ts" />
 /// <reference path="./enums.ts" />
 var board;
@@ -112,12 +110,16 @@ var board;
                         _loop_1(i);
                     }
                     return false;
-                    function intersection(ship, locations, j) {
-                        return (_.indexOf(ship.locations, locations[j]) >= 0);
-                    }
+                }
+                function intersection(ship, locations, i) {
+                    return (_.indexOf(ship.locations, locations[i]) >= 0);
                 }
                 function computeDirection() {
-                    return Math.floor(Math.random() * 2);
+                    var rand = Math.random();
+                    //console.log('[rand]', rand);
+                    var direction = Math.floor(rand * 2);
+                    //console.log('[direction]', direction);
+                    return direction;
                 }
                 function computeRowHorizontalOrColVertical() {
                     return Math.floor(Math.random() * currentPlayer.boardSize);
@@ -131,7 +133,7 @@ var board;
                         row = computeRowHorizontalOrColVertical();
                         col = computeColHorizontalOrRowVertical();
                     }
-                    else if (direction = enums.Direction.vertical) {
+                    else if (direction == enums.Direction.vertical) {
                         row = computeColHorizontalOrRowVertical();
                         col = computeRowHorizontalOrColVertical();
                     }

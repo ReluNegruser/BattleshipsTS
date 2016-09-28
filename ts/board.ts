@@ -3,7 +3,6 @@
 //import Player from './playerState'
 //import Direction from './enums'
 
-/// <reference path="./interfaces.ts" />
 /// <reference path="./playerState.ts" />
 /// <reference path="./enums.ts" />
 
@@ -11,7 +10,7 @@
 namespace board {
     export class Board {
 
-        public ships: Array<I.Ship>
+        public ships: Array<Ship>
 
         constructor () {
             this.ships = [
@@ -34,14 +33,14 @@ namespace board {
 
             function generateSingleShipLocations(shipIndex: number) {
                 let direction: enums.Direction;
-                let firstCell: I.Cell;
+                let firstCell: Cell;
                 let newShipLocations: Array<string>;
 
                 do {
                     direction = computeDirection();
                     firstCell = computeFirstCell(direction);
                     newShipLocations = buildShipLocations(firstCell, direction);
-                } while(collision(newShipLocations, currentPlayer))
+                } while (collision(newShipLocations, currentPlayer))
                 
                 return newShipLocations;
 
@@ -50,7 +49,7 @@ namespace board {
 
                     for (let i = 0; i < currentPlayer.numShips; i++) {
                         _.forEach(thisBoard.ships[i], () => {
-                            for (let j = 0; j < locations.length; j++) {
+                            for (var j = 0; j < locations.length; j++) {
                                 if (intersection(thisBoard.ships[i] ,locations, j)) {
                                     return true;
                                 }
@@ -59,13 +58,18 @@ namespace board {
                     }
                 return false;
 
-                function intersection(ship: I.Ship, locations: Array<string>, j: number) {
-                    return (_.indexOf(ship.locations, locations[j]) >= 0);
                 }
+
+                function intersection(ship: Ship, locations: Array<string>, i: number) {
+                    return (_.indexOf(ship.locations, locations[i]) >= 0);
                 }
 
                 function computeDirection() {
-                    return Math.floor(Math.random() * 2);
+                    let rand = Math.random();
+                    //console.log('[rand]', rand);
+                    let direction = Math.floor(rand * 2);
+                    //console.log('[direction]', direction);
+                    return direction;
                 }
 
                 function computeRowHorizontalOrColVertical () {
@@ -81,7 +85,7 @@ namespace board {
                     if(direction == enums.Direction.horizontal) {
                         row = computeRowHorizontalOrColVertical();
                         col = computeColHorizontalOrRowVertical();
-                    } else if (direction = enums.Direction.vertical) {
+                    } else if (direction == enums.Direction.vertical) {
                         row = computeColHorizontalOrRowVertical();
                         col = computeRowHorizontalOrColVertical();
                     }
@@ -90,7 +94,7 @@ namespace board {
                     }
                 }
 
-                function buildShipLocations (firstCell: I.Cell, direction: enums.Direction) {
+                function buildShipLocations (firstCell: Cell, direction: enums.Direction) {
                     let row: string = firstCell.row;
                     let col: string = firstCell.col;
                     let newShipLocations: Array<string> = recreateCellID(currentPlayer);

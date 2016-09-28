@@ -66,10 +66,10 @@ namespace controller {
 			return;
 		}
 
-		function markHit(ship: I.Ship, index: number) {
+		function markHit(ship: Ship, index: number) {
 			ship.hits[index] =  "hit";
 		}
-		function markSunk(ship: I.Ship) {
+		function markSunk(ship: Ship) {
 			for(var j = 0; j < ship.locations.length; j++){
 				var cell = document.getElementById(ship.locations[j]);
 				cell.setAttribute("class", "sunk");
